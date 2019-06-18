@@ -14,8 +14,8 @@ class Module extends Component {
         })
         .then(res => {
             if (res.value) {
-                console.log(res);
-                Axios.get(data.url)
+                console.log(data);
+                Axios.get(`http://data.url`)
                 .then(res => {
                     if (res.data.success) {
                         Swal.fire({

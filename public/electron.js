@@ -13,6 +13,7 @@ function createWindow() {
       width: 600,
       height: 600,
       resizable: false,
+      fullscreen: false,
       title: 'Modularitea',
       icon: 'modularitea-icon.ico'
     });
