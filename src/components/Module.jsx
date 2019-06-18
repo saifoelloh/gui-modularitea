@@ -17,10 +17,28 @@ class Module extends Component {
                 console.log(res);
                 Axios.get(data.url)
                 .then(res => {
-                    console.log(res);
+                    if (res.data.success) {
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Congratulation!!',
+                            text: res.data.message
+                        })
+                    } else {
+                        Swal.fire({
+                            type: 'warning',
+                            title: 'Oops..',
+                            text: res.data.message
+                        })
+                    }
+                    
                 })
-            } else {
-                console.log(res);
+                .catch(res=>{
+                    Swal.fire({
+                        type: 'warning',
+                        title: 'Oops..',
+                        text: res.data.message
+                    })
+                })
             }
         })
     }
